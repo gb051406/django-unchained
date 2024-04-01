@@ -1,1 +1,1 @@
-# django-unchained
+# django-tutorial
