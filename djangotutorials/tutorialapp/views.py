@@ -21,3 +21,10 @@ def students(request):
     }
 
     return render(request, 'students.html', context)
+def teachers(request):
+    teachers = Teacher.objects.all()
+    context={
+        'teachers':teachers,
+    }
+
+    return render(request, 'teachers.html', context)

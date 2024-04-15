@@ -4,27 +4,27 @@
 
 <br><br><br>
 
-<center><h1>Students</h1><center>
+<center><h1>Teachers</h1><center>
 
 
 
 
 
-    
+
 
 <table class="table table-striped">
     <thead>
         <th>Last Name</th>
         <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Grade</th>
+        <th>Room Number</th>
+        <th>Subject</th>
     <thead>
-    {% for i in students %}
+    {% for i in teachers %}
         <tr>
             <td>{{ i.lastname }}</td>
             <td>{{ i.firstname }}</td>
-            <td>{{ i.middlename }}</td>
-            <td>{{ i.grade }}</td>
+            <td>{{ i.roomnumber }}</td>
+            <td>{{ i.subject }}</td>
         <tr>
     {% endfor %}
 {% endblock %}
