@@ -55,3 +55,28 @@ def studentform(request):
         {"method": request.method, "form": form}
         
         )
+def teacherform(request):
+    context={}
+    if request.method == "POST": #check for button click
+        form = TeacherForm(request.POST)
+        if form.is_valid():
+            context=""
+            for name, value in form.cleaned_data.items():
+                print("{}: ({}{}".format\
+                    (name,type(value), value))
+        #save data locally but not to the database yet
+        requests = form.save(commit=False)
+
+        #save each field to a local variable
+        firstname = form.cleaned_data['firstname']
+        lastname = form.cleaned_data['lastname']
+        roomnumber = form.cleaned_data['roomnumber']
+        subject = form.cleaned_data['subject']
+        requests.save()#save to the database
+    else:
+        form = TeacherForm()
+    #return the form and all of its fields in the place of context variables and lists
+    return render(request, "teacherform.html", \
+        {"method": request.method, "form": form}
+        
+        )
