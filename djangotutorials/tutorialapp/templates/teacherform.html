@@ -7,15 +7,12 @@
         width: 600px;
     }
     </style>
-    {% csrf_token %}
-    <div class="card">
-        <div class="card-body">
-            {{form.as_p}}
-
-            <button type="submit" class = "btn btn-primary" value = "submit" id ="submitbutton">
-                Add Teacher
-            </button>
-        </div>
-      </div>
+    <form method="post" action="" id="teacherform" >
+        {% csrf_token %}       
+            {{ form.as_p}}
+        <p>
+             <button type="submit" class="btn btn-primary" value="Submit" id="teacherformbtn">Add Teacher</button>  
+        </p>
+    </form>
     
 {% endblock %}
