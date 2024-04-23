@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
+from django.contrib import messages
 # Create your views here.
 
 def base(request):
@@ -48,6 +49,9 @@ def studentform(request):
         middlename = form.cleaned_data['middlename']
         grade = form.cleaned_data['grade']
         requests.save()#save to the database
+        #confirm message
+        messages.success(request, "New Student Added Successfully!")
+
     else:
         form = StudentForm()
     #return the form and all of its fields in the place of context variables and lists
@@ -73,6 +77,8 @@ def teacherform(request):
         roomnumber = form.cleaned_data['roomnumber']
         subject = form.cleaned_data['subject']
         requests.save()#save to the database
+        #confirm message
+        messages.success(request, "New Teacher Added Successfully!")
     else:
         form = TeacherForm()
     #return the form and all of its fields in the place of context variables and lists
