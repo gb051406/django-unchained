@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content%}
+{% load static %}
 <style>
     body{
         margin:100px;
@@ -32,5 +33,5 @@
                      <button type="submit" class="btn btn-primary" value="Submit" id="teacherformbtn">Add Teacher</button>
         </div>
       </div>
-    
+      <img src= "{% static 'check.png' %}"> 
 {% endblock %}
