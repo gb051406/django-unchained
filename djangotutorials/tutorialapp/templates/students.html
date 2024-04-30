@@ -3,7 +3,6 @@
 {% block content%}
 
 {% load static %}
-<img src= "{% static 'student.jpg' %}"> 
 <div class="container px-4 py-5" id="featured-3">
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="feature col">
@@ -25,7 +24,7 @@
 
 
 
-
+ 
 
     
     <link href="product.css" rel="stylesheet">
@@ -53,6 +52,7 @@
         <th>Middle Name</th>
         <th>Grade</th>
     <thead>
+      <img src= "{% static 'student.jpg' %}"> 
     {% for i in students %}
         <tr>
             <td>{{ i.lastname }}</td>
@@ -60,5 +60,7 @@
             <td>{{ i.middlename }}</td>
             <td>{{ i.grade }}</td>
         <tr>
+          
     {% endfor %}
+    
 {% endblock %}
