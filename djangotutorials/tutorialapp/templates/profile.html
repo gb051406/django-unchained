@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Profile</h1>
+<br><br><br>
+<div class="card" style="width: 10;">
+    <div class="card-body">
+      <h5 class="card-title">Profile</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+      <p class="card-text">
+        <table border="1" width="100%" class="table table=light table-striped">
+            <thead>
+                <tr>
+                    <tr>Last Name</tr>
+                    <tr>first Name</tr>
+                    <tr>Username</tr>
+                    <tr>Email</tr>
+                    <tr>Last login</tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{request.user.Last_Name}}</td>
+                    <td>{{request.user.first_name}}</td>
+                    <td>{{request.user.username}}</td>
+                    <td>{{request.user.email}}</td>
+                    <td>{{request.user.last_login}}</td>
+                    <td>
+                        {% for group in request.user.groups.all %}
+                        {{group.name}}<br>
+                    {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                </p>
+    </div>
+  </div>
+  <div class="card" style="width: 10;">
+    <div class="card-body">
+      <h5 class="card-title">My Data</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+      <p class="card-text">
+        <table border="1" width="100%" class="table table=light table-striped">
+            <thead>
+                <tr>
+                    <tr>Last Name</tr>
+                    <tr>first Name</tr>
+                    <tr>Middle Name</tr>
+                    <tr>Grade</tr>
+                </tr>
+            
+            {% for i in mystudentaccounts%}
+                <tr>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.middlename}}</td>
+                    <td>{{i.grade}}</td>
+                </tr>
+            {% endfor %}
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+                </p>
+    </div>
+  </div>
+{% endblock %}
