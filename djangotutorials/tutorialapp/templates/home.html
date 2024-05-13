@@ -280,5 +280,7 @@
         </div>
         
 <br><br><br>
-
+{% if user.is_authenticated %}
+<h2>Welcome back, {{user.first_name}} {{user.last_name}} ! </h2>
+{% endif%}
 {% endblock %}
